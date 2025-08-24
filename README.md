@@ -33,7 +33,7 @@ The app then generates a customized itinerary including activities, sightseeing,
 
 ---
 
-## 🌎 Live Demo 
-https://bhartenduji.github.io/Skill-Cred/
+## 🌎 Live Demo
+https://bhartenduji.github.io/Skill-Cred-Project-1/
 
 _ _ _
