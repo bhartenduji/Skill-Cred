@@ -33,8 +33,7 @@ The app then generates a customized itinerary including activities, sightseeing,
 
 ---
 
-## 🚀 Getting Started
+## 🌎 Live Demo 
+https://bhartenduji.github.io/Skill-Cred/
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/smart-travel-planner.git
+_ _ _
