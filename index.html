@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Travel Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ <div class="dynamic-bg">
+    <div class="blob"></div>
+    <div class="blob"></div>
+    <div class="blob"></div>
+  </div>
+</div>
+
+  <div id="cityBg" class="city-bg" aria-hidden="true"></div>
+  <header>
+    
+    <h1>travii</h1>
+    
+
+    
+  </header>
+
+  <main class="container">
+    <!-- Left: Form -->
+    <section class="card">
+      <div class="body">
+        <h2>Trip Details</h2>
+        <div class="row">
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" placeholder="e.g., Tokyo" />
+          </div>
+          <div class="field">
+            <label for="days">Number of Days</label>
+            <input id="days" type="number" min="1" max="30" placeholder="e.g., 4" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="budget">Budget</label>
+            <select id="budget">
+              <option value="">Select…</option>
+              <option>low</option>
+              <option>medium</option>
+              <option>high</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="style">Travel Style</label>
+            <select id="style">
+              <option>balanced</option>
+              <option>family</option>
+              <option>adventure</option>
+              <option>luxury</option>
+              <option>budget</option>
+              <option>cultural</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="diet">Diet Preferences (optional)</label>
+            <input id="diet" placeholder="e.g., vegetarian, halal, no seafood" />
+            <div class="hint">Used for restaurant suggestions.</div>
+          </div>
+          <div class="field">
+            <label for="pace">Pace</label>
+            <select id="pace">
+              <option>moderate</option>
+              <option>relaxed</option>
+              <option>packed</option>
+            </select>
+          </div>
+        </div>
+
+        <details style="margin-top:10px">
+          <summary class="hint">Optional: Bring your own AI endpoint (advanced)</summary>
+          <div class="row">
+            <div class="field">
+              <label for="aiEndpoint">Chat Completions Endpoint</label>
+              <input id="aiEndpoint" placeholder="e.g., https://api.openai.com/v1/chat/completions" />
+            </div>
+            <div class="field">
+              <label for="aiModel">Model</label>
+              <input id="aiModel" value="gpt-4o-mini" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="aiKey">Bearer Token</label>
+              <input id="aiKey" type="password" placeholder="Your API key (visible in browser)" />
+            </div>
+            <div class="field">
+              <label for="maxTokens">Max Tokens</label>
+              <input id="maxTokens" type="number" value="900" />
+            </div>
+          </div>
+          <div class="hint">
+            Security note: Keys entered here run <b>entirely in your browser</b>. Use a server proxy in production.
+          </div>
+          <div class="switch">
+            <input id="useAI" type="checkbox" />
+            <label for="useAI">Use AI for itinerary (else use local generator)</label>
+          </div>
+        </details>
+
+        <div class="controls">
+          <button class="primary" id="generate">Generate Itinerary</button>
+          <button class="ghost" id="copyPrompt">Copy AI Prompt</button>
+          <button class="ghost" id="clear">Clear</button>
+        </div>
+        <div class="log" id="log" hidden></div>
+      </div>
+    </section>
+
+    <!-- Right: Output -->
+    <section class="card">
+      <div class="body">
+        <h2>Itinerary</h2>
+        <div id="output" class="output">
+          Fill the form and click <span class="kbd">Generate Itinerary</span>.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer">
+    Built with only HTML/CSS/JS • Maps use Google Maps search links • You can export text via copy
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
